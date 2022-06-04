@@ -1,18 +1,25 @@
 
 
-import React, {useState} from 'react'
+import React from 'react'
 
-function ListItem({item, clickItem}) {
-    return(
+function ListItem(props) {
+    if(props.func) {
+        return(
             <li
-                key={item.id}
                 className='list-item'
-                onClick={clickItem}
-                value={item.title}
-            >{item.title}</li>
-    )
+                onClick={() => props.func(props.item)}
+                value={props.item.title}
+            >{props.item.title}</li>
+        )
+    } else {
+        return(
+            <li
+                className='list-item'
+                value={props.item.title}
+            >{props.item.title} <span>{props.item.amount}</span></li>
+        )
+    }
+
 }
-
-
 
 export default ListItem

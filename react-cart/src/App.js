@@ -1,11 +1,14 @@
 
-import './App.css';
-import List from './components/List'
+import React from 'react'
+import Container from './components/Container'
 
 function App() {
   return (
     <>
-      <List />
+      <header>
+        <h1>Grocery List</h1>
+      </header>
+      <Container />
     </>
   );
 }
